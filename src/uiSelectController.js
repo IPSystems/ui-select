@@ -484,7 +484,7 @@ uis.controller('uiSelectCtrl',
       _ensureHighlightVisible();
     }
 
-    if (key === KEY.ENTER || key === KEY.ESC) {
+    if (key === KEY.ENTER || key === KEY.ESC || key === KEY.UP || key === KEY.DOWN) {
       e.preventDefault();
       e.stopPropagation();
     }

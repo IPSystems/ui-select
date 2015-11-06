@@ -1479,16 +1479,16 @@ describe('ui-select tests', function() {
 
     describe('bootstrap theme', function() {
 
-      it('should show search input when true', function() {
+      it('should not be readonly search input when true', function() {
         setupSelectComponent('true', 'bootstrap');
         clickMatch(el);
-        expect($(el).find('.ui-select-search')).not.toHaveClass('ng-hide');
+        expect($(el).find('.ui-select-search').attr('readonly')).toBeUndefined();
       });
 
-      it('should hide search input when false', function() {
+      it('should be readonly search input when false', function() {
         setupSelectComponent('false', 'bootstrap');
         clickMatch(el);
-        expect($(el).find('.ui-select-search')).toHaveClass('ng-hide');
+        expect($(el).find('.ui-select-search').attr('readonly')).toEqual('readonly');
       });
 
     });
